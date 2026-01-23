@@ -24,6 +24,23 @@ SPEC (Issues)
 → EVIDENCE (logs / artifacts)  
 → FIX (next Issue or PR)
 
+## Language Policy
+
+- AI-facing artifacts (e.g., this specification, workflows) use English to minimize interpretation noise.
+- Human-facing artifacts (e.g., Issues, Wiki) may be written in Japanese.
+- Language is treated as a view layer; semantic intent is language-agnostic.
+- Usability is prioritized at the current stage; OSS conventions and third-party perspectives are secondary for now.
+
+## Branch Naming (Recommended)
+
+Branches should be created from Issues whenever possible.
+
+When using GitHub's issue-to-branch feature, the automatically generated
+branch name (e.g. `<issue-number>-<issue-title>`) is recommended as-is.
+
+Branch names represent implementation scope and are optimized for
+traceability and machine interpretation rather than manual typing.
+
 ---
 
 ## 2. Roles
