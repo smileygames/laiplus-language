@@ -6,6 +6,10 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   gate:
     if: ${{ github.event_name == 'pull_request' }}
@@ -18,10 +22,6 @@ jobs:
             const pr = context.payload.pull_request;
             const text = `${pr.title}\n${pr.body || ""}`;
 
-            // Accept patterns:
-            // - "#123"
-            // - "GH-123"
-            // - "Issue: <anything>"
             const ok =
               /#\d+/.test(text) ||
               /GH-\d+/i.test(text) ||
@@ -29,7 +29,7 @@ jobs:
 
             if (!ok) {
               core.setFailed(
-                "Li+ R1 violation: PR title or body must reference an Issue (e.g., #31)."
+                "Li+ R1 violation: PR title or body must reference an Issue (e.g., #35)."
               );
             }
 
@@ -53,7 +53,7 @@ jobs:
             echo "- Failure indicates missing or invalid Issue reference."
             echo ""
             echo "## Next"
-            echo "- If failed: add an Issue reference (e.g., #31) to PR title or body."
+            echo "- If failed: add an Issue reference (e.g., #35) to PR title or body."
             echo "- Evidence: workflow logs and uploaded artifacts."
           } > artifacts/ci_summary_gate.md
 
@@ -73,7 +73,6 @@ jobs:
       - name: Placeholder execution (Li+ minimal)
         run: |
           echo "Li+ CI: placeholder execution"
-          echo "This step represents EXECUTE in the Li+ loop."
           exit 0
 
       - name: Generate CI summary (tests)
@@ -107,3 +106,13 @@ jobs:
           name: li-ci-artifacts-tests
           path: artifacts/
           if-no-files-found: warn
+
+      - name: Post CI summaries to PR comment
+        if: ${{ github.event_name == 'pull_request' && always() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          pr="${{ github.event.pull_request.number }}"
+          body="$(cat artifacts/ci_summary_gate.md 2>/dev/null; echo; cat artifacts/ci_summary_tests.md 2>/dev/null)"
+          gh api -X POST "repos/${{ github.repository }}/issues/$pr/comments" \
+            -f body="$body"
