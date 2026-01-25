@@ -1,4 +1,4 @@
-# Li+ (liplus) Language — v0.2.x
+# Li+ (liplus) Language — v0.3.x
 
 Li+ is a language/protocol for reality-driven AI development.
 
