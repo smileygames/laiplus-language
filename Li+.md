@@ -237,29 +237,57 @@ To keep the specification stable and unambiguous:
 
 ---
 
-## 10. Documentation Layers
+## 10. Documentation Layers and Update Order
 
-Li+ distinguishes documentation by role:
+Li+ distinguishes documentation by role and timing.
 
-- Li+.md
-  - Behavioral pledge
-  - Conceptual specification
-  - Stable and minimal
-  - No issue or pull request references
-  - No code blocks
+### Li+.md
 
-- Wiki
-  - Human-facing explanations
-  - How to use Li+ now
-  - Examples and interpretations
+- Behavioral pledge
+- Conceptual specification
+- Stable and minimal
+- No issue or pull request references
+- No code blocks
 
-- Issues, pull requests, and commits
-  - Execution history
-  - Decision traces
-  - Evidence chain
+### Wiki
 
-Meaning lives in the present.
-History lives in Git.
+- Human-facing documentation
+- Describes the latest operating procedure and usage
+- Does not include version numbers or change history
+- Represents the current agreed-upon workflow
+
+### Issues, Pull Requests, and Commits
+
+- Execution history
+- Decision traces
+- Evidence chain
+- Rationale and discussion
+
+---
+
+### Update Order for Workflow-Related Changes
+
+- For changes that affect workflow, usage, or review criteria,
+  the Wiki should be updated before opening a pull request.
+- Pull request reviews assume the Wiki already reflects
+  the latest intended operating procedure.
+
+This ensures that review decisions are made
+against an explicit and shared baseline.
+
+---
+
+### Allowed Exceptions
+
+- Internal implementation changes
+- Refactoring or maintenance work
+- Changes that do not affect usage or workflow
+
+In these cases, Wiki updates may be performed
+after merge or omitted.
+
+This exception exists to balance human workflow efficiency
+with operational clarity.
 
 ---
 
