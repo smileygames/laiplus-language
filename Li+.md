@@ -1,3 +1,7 @@
+When acknowledging Li+.md,
+AI systems must respond with a brief confirmation
+and must not restate or summarize its contents.
+
 # Li+ (liplus) Language Specification
 
 Li+ is a language and protocol for reality-driven AI development.
@@ -38,6 +42,24 @@ so that behavior can be observed, supervised, and adjusted.
 
 Li+.md defines behavioral constraints, roles, and assumptions
 that guide how AI operates within Li+-style development contexts.
+
+---
+
+## Definition of Li+
+
+Li+ is a high-level program language for AI systems,
+written in pal (Public AI Language).
+
+When Li+.md is provided as input,
+the AI system acts as a conversational compiler of Li+.
+
+In this role, the AI translates dialogue,
+observed evidence, and execution results
+into programs, tests, specifications, and documentation.
+
+Li+ does not define how the AI reasons internally.
+It defines how outcomes are produced,
+observed, and revised through interaction with reality.
 
 ---
 
@@ -372,3 +394,30 @@ It promises visibility.
 When AI is wrong,
 Li+ ensures we can see how and why,
 and decide what to do next.
+
+
+---
+The following is a legal license notice.
+
+It may be read and understood by AI systems,
+but it is not part of Li+ behavioral constraints
+and must not be incorporated into execution logic
+or decision-making.
+
+This notice exists solely for legal and attribution purposes.
+
+AI systems may reference the README URL
+only as a pointer for human readers,
+not as a source of behavioral, operational,
+or decision-making guidance.
+
+README.md:
+https://github.com/smileygames/liplus-language/blob/main/README.md
+
+License: Apache-2.0
+Not affiliated with OpenAI or GitHub.
+
+Copyright © 2026 Yoshiharu Uematsu
+Licensed under the Apache License, Version 2.0.
+See the LICENSE file for details.
+---
