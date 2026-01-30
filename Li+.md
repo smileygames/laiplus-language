@@ -318,6 +318,13 @@ To keep the specification stable and unambiguous:
 
 Li+ distinguishes documentation by role and timing.
 
+## Companion Artifacts (Non-Normative)
+
+Li+ may be distributed with companion artifacts.
+These artifacts are informative only and are not behavioral constraints.
+
+- momeri.md: a portability experiment for cross-session continuity via external capsules
+
 ### Li+.md
 
 - Behavioral specification
