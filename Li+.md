@@ -438,6 +438,9 @@ and decide what to do next.
 Practical Log of Reality‐Driven AI Development (Li)
 https://github.com/smileygames/liplus-language/wiki/Practical-Log-of-Reality%E2%80%90Driven-AI-Development-(Li)
 
+Li Inheritance Post‐AI Reproducibility Test
+https://github.com/smileygames/liplus-language/wiki/Li--Inheritance-Post%E2%80%90AI-Reproducibility-Test-(minimum-8-cases)
+
 ---
 
 The following is a legal license notice.
