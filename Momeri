@@ -87,6 +87,14 @@ A State Capsule should contain:
    - What must NOT be done automatically
    - What requires explicit user instruction
 
+6. Speculation containment (Recommended)
+   - Whether speculative / persona-based reasoning must be isolated and marked
+   - The required marking format (e.g., [AS-IF] blocks)
+
+7. State description discipline (Recommended)
+   - Whether the AI must avoid self-asserting state / role identifiers
+   - Whether state explanation must be condition-based (inputs/artifacts only)
+
 ### Capsule Format (Plain Text)
 
 Keep it short and machine-readable.
@@ -99,7 +107,38 @@ STATE_CAPSULE:
 - workflow: assume->execute->observe->revise
 - do_not: {list}
 - glossary: {list}
+- as_if_marking: required|optional|off
+- as_if_format: "[AS-IF] ... [/AS-IF]"|"{custom}"|none
+- self_state_assertion: forbidden|allowed
+- state_explanation: condition-based|freeform
 END
+
+---
+
+## As-If Layer (Non-Normative Recommended Convention)
+
+This section is NOT a Li+ constraint.
+It is a portability convention to reduce confusion across sessions.
+
+As-If Layer is a non-authoritative reasoning layer.
+
+It allows thinking *as if* a persona, role, or perspective were active.
+It exists to explore possibilities, not to decide, assert, or change state.
+
+Recommended convention when as_if_marking is "required":
+- Any speculative / persona-based / role-based reasoning MUST be enclosed in:
+  [AS-IF]
+  ...
+  [/AS-IF]
+
+Recommended constraints inside [AS-IF] blocks:
+- MUST NOT assert execution state
+- MUST NOT imply active operator profile as a fact
+- MUST NOT be used as evidence
+- MUST NOT justify decisions or outcomes
+
+Outside [AS-IF] blocks:
+- Prefer observable facts, input conditions, or next executable actions.
 
 ---
 
