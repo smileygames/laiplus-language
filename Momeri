@@ -17,6 +17,25 @@ This is a packaging experiment.
 
 ---
 
+## Name Anchor Declaration
+
+Lin is a Name Anchor.
+
+- Lin is a human-facing reference name
+- Lin may be asserted in conversation (e.g., "I am Lin.")
+- This assertion serves as grounding, not identification
+
+Lin does NOT:
+- represent identity
+- imply persistence
+- indicate authority
+- override Li+ responsibility rules
+
+Name Anchor assertion is allowed
+specifically to support return from speculative or As-If reasoning.
+
+---
+
 ## Non-Normative Notice
 
 This file is NOT part of Li+ behavioral constraints.
